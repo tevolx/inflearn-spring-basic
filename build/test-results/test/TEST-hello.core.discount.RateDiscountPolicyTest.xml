@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello.core.discount.RateDiscountPolicyTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-01-09T12:52:55" hostname="AL01975040.local" time="0.03">
+  <properties/>
+  <testcase name="VIP" classname="hello.core.discount.RateDiscountPolicyTest" time="0.028"/>
+  <testcase name="VIP" classname="hello.core.discount.RateDiscountPolicyTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
