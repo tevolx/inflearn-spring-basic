@@ -10,5 +10,6 @@ package hello.core.test;
 public class TestForGit {
 	private void testFunc() {
 		System.out.println("This is test 1");
+		System.out.println("This is test 2");
 	}
 }
