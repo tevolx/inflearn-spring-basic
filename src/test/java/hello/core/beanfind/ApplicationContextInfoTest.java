@@ -11,28 +11,27 @@ public class ApplicationContextInfoTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
     @Test
-    @DisplayName("Test")
+    @DisplayName("모든 빈 출력하기")
     void findAllBean() {
-        String[] beanDefNames = ac.getBeanDefinitionNames();
-        for (String beanDefName : beanDefNames) {
-            Object bean = ac.getBean(beanDefName);
-            System.out.println("bean = " + bean);
+        String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            Object bean = ac.getBean(beanDefinitionName);
+            System.out.println("bean= " + beanDefinitionName + " object= " + bean);
         }
     }
 
     @Test
     @DisplayName("애플리케이션 빈 출력하기")
     void findApplicationBean() {
-        String[] beanDefNames = ac.getBeanDefinitionNames();
-        for (String beanDefName : beanDefNames) {
-            BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefName);
-
+        String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
 
             //ROLE_APPLICATION : 직접 등록한 어플리케이션 빈
             //ROLE_INFRASTRUCTURE: 스프링이 내부에서 사용하는 빈
-            if(beanDefinition.getRole() == BeanDefinition.ROLE_INFRASTRUCTURE) {
-                Object bean = ac.getBean(beanDefName);
-                System.out.println("bean = " + bean);
+            if (beanDefinition.getRole() == BeanDefinition.ROLE_INFRASTRUCTURE) {
+                Object bean = ac.getBean(beanDefinitionName);
+                System.out.println("bean= " + beanDefinition + " object= " + bean);
             }
         }
     }
