@@ -1,11 +1,14 @@
 package hello.core.lifecycle;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-public class NetworkClient{
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+public class NetworkClient {
 
     private String url;
 
@@ -39,4 +42,25 @@ public class NetworkClient{
     public void close() throws Exception {
         disconnect();
     }
+
+//    @Override
+//    public void destroy() throws Exception {
+//        disconnect();
+//    }
+//
+//    @Override
+//    public void afterPropertiesSet() throws Exception {
+//        connect();
+//    }
+
+//    @Configuration
+//    static class LifeCycleConfig {
+//
+//        @Bean(initMethod = "init", destroyMethod = "close")
+//        public NetworkClient networkClient() {
+//            NetworkClient networkClient = new NetworkClient();
+//            networkClient.setUrl("http://hello-spring.dev");
+//            return networkClient;
+//        }
+//    }
 }

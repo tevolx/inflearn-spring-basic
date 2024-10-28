@@ -37,12 +37,14 @@ public class SingletonTest {
 
         assertThat(singletonService1).isSameAs(singletonService2);
 
+        singletonService1.logic();
+
         //isSameAs: 참조 비교
         //isEqualAs: 값 비교
     }
 
     @Test
-    @DisplayName("test")
+    @DisplayName("스프링 컨테이너와 싱글톤")
     void springContainer() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
